@@ -21,14 +21,19 @@ searchUser.addEventListener('keyup', (e) => {
     .then(data => { 
       if(data.profile.message === 'Not Found') {
 
+        //Show alert
+        ui.showAlert('Usuário não encontrado', 'alert alert-danger');
+
       } else {
         //show profike
         ui.showProfile(data.profile);
+        ui.showRepos(data.repos);
       } 
     })
     
   } else {
     //Clear profile
+    ui.clearProfile();
   }
 
 });
